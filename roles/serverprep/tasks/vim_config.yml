@@ -1,0 +1,20 @@
+---
+- name: Install VIM
+  become: true
+  apt:
+    pkg: vim
+    state: "{{ vim_package_state }}"
+
+- name: Set VIM as default editor
+  become: true
+  alternatives:
+    name: editor
+    path: /usr/bin/vim.basic
+
+- name: Ensure .vimrc config in place
+  become: true
+  template:
+    src: vimrc
+    dest: "/etc/vim/vimrc"
+    backup: yes
+    mode: 0744

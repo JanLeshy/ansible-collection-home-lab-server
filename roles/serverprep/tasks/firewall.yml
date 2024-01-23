@@ -1,0 +1,16 @@
+---
+- name: Install ufw (state=present is optional)
+  apt:
+    name: ufw
+    state: present
+
+- name: Allow everything and enable UFW
+  community.general.ufw:
+    state: enabled
+    policy: allow
+
+- name: Allow SSH in UFW
+  ufw: 
+    rule: allow 
+    port: 22
+    proto: tcp

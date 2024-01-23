@@ -1,0 +1,12 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include extensions"
+      ansible.builtin.include_role:
+        name: "extensions"
+
+- name: Import collections roles
+  hosts: all
+  roles:
+    - role: serverprep

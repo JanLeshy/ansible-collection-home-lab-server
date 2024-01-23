@@ -1,0 +1,33 @@
+namespace: janleshy
+
+name: home_lab_server
+
+version: 1.0.0
+
+readme: README.md
+
+authors:
+  - Jan Roepke (JanLeshy)
+
+description: A Collection of Ansible roles to setup my home lab servers
+
+license_file: LICENSE
+
+tags:
+  - server
+  - vim
+  - ufw
+
+dependencies: {}
+
+repository: https://github.com/janleshy/ansible-collection-home_lab_server
+
+documentation: https://github.com/janleshy/ansible-collection-home_lab_server/blob/main/README.md
+
+homepage: https://github.com/janleshy/ansible-collection-home_lab_server
+
+issues: https://github.com/janleshy/ansible-collection-home_lab_server/issues
+
+build_ignore: []
+
+

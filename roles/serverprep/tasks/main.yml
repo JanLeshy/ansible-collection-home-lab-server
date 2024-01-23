@@ -1,0 +1,27 @@
+---
+- name: import general_config.yml
+  import_tasks: general_config.yml
+  tags:
+      - general_config
+
+- name: import server_update.yml
+  import_tasks: server_update.yml
+  tags:
+      - update
+
+- name: import usefull_packages.yml
+  import_tasks: usefull_packages.yml
+  tags:
+      - usefull_packages
+
+- name: import firewall.yml
+  import_tasks: firewall.yml
+  tags:
+      - firewall
+
+
+- name: import vim_config.yml
+  import_tasks: vim_config.yml
+  tags:
+      - config
+
