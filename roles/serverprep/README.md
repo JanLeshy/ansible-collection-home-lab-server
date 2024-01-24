@@ -1,38 +1,31 @@
-Role Name
-=========
+# Role Name
 
 A brief description of the role goes here.
 
-Requirements
-------------
+## Requirements
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+root access to the servers, for installing sudo, after that, sudo access for the user running the playbook.
 
-Role Variables
---------------
+## Role Variables
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+| Name                   | Default Value | Description                                                                                                  |
+| ---------------------- | ------------- | ------------------------------------------------------------------------------------------------------------ |
+| `timezone`             | Europe/Berlin | The server timezone, availabe timezones [here](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) |
+| `installing_sudo`      | true          | If true sudo will be installed [additional infos](https://wiki.debian.org/sudo/)                             |
+| `ufw_additional_rules` | none          | define additional rules, als an dict example - { rule: allow, port: 443, proto: tcp }                                         **ATTENTION**: the SSH port 22 will allow per default |
+| `variable4`            |               |                                                                                                              |
 
-Dependencies
-------------
+## Dependencies
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+none
 
-Example Playbook
-----------------
+## Example Playbook
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+## License
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+MIT
 
-License
--------
+## Author Information
 
-BSD
-
-Author Information
-------------------
-
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Jan Roepke (JanLeshy)
+have fun with it, and feel free to contribute or contact me.

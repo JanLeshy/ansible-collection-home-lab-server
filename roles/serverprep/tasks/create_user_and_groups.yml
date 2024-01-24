@@ -1,0 +1,20 @@
+---
+- name: Create Group
+  ansible.builtin.group:
+    name: "{{ item.name }}"
+  with_items:
+    - "{{ server_group_details }}"
+
+- name: Reset ssh connection to allow user changes to affect ansible user
+  ansible.builtin.meta:
+    reset_connection
+
+- name: Create user and add to group
+  ansible.builtin.user:
+    name: "{{ item.name }}"
+    uid: "{{ item.uid }}"
+    groups: "{{ item.groups }}"
+    createhome: true
+  with_items:
+    - "{{ server_user_details }}"
+

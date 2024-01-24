@@ -4,3 +4,5 @@ ansidev_package_state: present
 vim_package_state: "{{ ansidev_package_state }}"
 
 timezone: Europe/Berlin
+
+installing_sudo: true

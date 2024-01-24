@@ -2,7 +2,7 @@ namespace: janleshy
 
 name: home_lab_server
 
-version: 1.0.0
+version: 1.0.2
 
 readme: README.md
 
@@ -20,13 +20,13 @@ tags:
 
 dependencies: {}
 
-repository: https://github.com/janleshy/ansible-collection-home_lab_server
+repository: https://github.com/janleshy/ansible-collection-home-lab-server
 
-documentation: https://github.com/janleshy/ansible-collection-home_lab_server/blob/main/README.md
+documentation: https://github.com/janleshy/ansible-collection-home-lab-server/blob/main/README.md
 
-homepage: https://github.com/janleshy/ansible-collection-home_lab_server
+homepage: https://github.com/janleshy/ansible-collection-home-lab-server
 
-issues: https://github.com/janleshy/ansible-collection-home_lab_server/issues
+issues: https://github.com/janleshy/ansible-collection-home-lab-server/issues
 
 build_ignore: []
 

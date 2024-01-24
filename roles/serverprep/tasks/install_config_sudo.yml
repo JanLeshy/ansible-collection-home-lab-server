@@ -1,0 +1,26 @@
+---
+- name: Install Debian/Ubuntu-specific packages
+  ansible.builtin.package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - sudo
+  when: ansible_os_family == "Debian"
+  tags: 
+    - sudo
+    - install_sudo
+
+- name: Add user to sudo group
+  ansible.builtin.user:
+    name: "{{ item }}"
+    groups: sudo
+    append: yes
+  with_items:
+    - "{{ sudo_users }}"
+  when: 
+    - ansible_os_family == "Debian"
+    - sudo_user is defined
+
+  tags: 
+    - sudo
+    - add_user_sudo

@@ -1,11 +1,11 @@
 ---
-- name: import general_config.yml
+- name: import general_config
   import_tasks: general_config.yml
   tags:
       - general_config
 
-- name: import server_update.yml
-  import_tasks: server_update.yml
+- name: import repo_update_upgrade
+  import_tasks: repo_update_upgrade.yml
   tags:
       - update
 
@@ -14,14 +14,26 @@
   tags:
       - usefull_packages
 
-- name: import firewall.yml
-  import_tasks: firewall.yml
+- name: import install_config_ufw
+  import_tasks: install_config_ufw.yml
   tags:
       - firewall
+      - ufw
 
 
-- name: import vim_config.yml
-  import_tasks: vim_config.yml
+- name: import create_user_and_groups
+  import_tasks: create_user_and_groups.yml
+  tags:
+      - create_user_and_groups
+
+- name: import install_config_sudo
+  import_tasks: install_config_sudo.yml
+  tags:
+      - install_config_sudo
+  when: installing_sudo |bool == true
+
+- name: import config_vim
+  import_tasks: config_vim.yml
   tags:
       - config
 
