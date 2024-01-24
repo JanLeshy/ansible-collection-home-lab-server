@@ -8,5 +8,23 @@
 
 - name: Import collections roles
   hosts: all
+
+  vars:
+    server_group_details:
+      - { name: testgroup1, gid: 1100 }
+      - { name: testgroup2, gid: 1200 }
+
+    server_user_details:
+      - { name: testuser, uid: 1001, groups: "testgroup1,testgroup2" }
+      - { name: testuser2, uid: 1002, groups: "testgroup2" }
+
+    sudo_users: 
+      - testuser
+
+    ufw_additional_rules:
+      - { rule: "allow", port: "80", proto: "tcp" }
+      - { rule: "allow", port: "443", proto: "tcp" }
+
   roles:
     - role: serverprep
+
