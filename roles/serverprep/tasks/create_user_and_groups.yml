@@ -13,7 +13,10 @@
   ansible.builtin.user:
     name: "{{ item.name }}"
     uid: "{{ item.uid }}"
+    password:  "{{ item.password | password_hash('sha512') }}"
     groups: "{{ item.groups }}"
+    shell: /bin/bash
+
     createhome: true
   with_items:
     - "{{ server_user_details }}"

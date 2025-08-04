@@ -20,17 +20,21 @@
       - firewall
       - ufw
 
+- name: import install_config_sudo
+  import_tasks: install_config_sudo.yml
+  tags:
+      - install_config_sudo
+  when: installing_sudo |bool == true
 
 - name: import create_user_and_groups
   import_tasks: create_user_and_groups.yml
   tags:
       - create_user_and_groups
 
-- name: import install_config_sudo
-  import_tasks: install_config_sudo.yml
+- name: import add_pub_ssh_keys
+  import_tasks: add_pub_ssh_keys.yml
   tags:
-      - install_config_sudo
-  when: installing_sudo |bool == true
+      - sshkeys
 
 - name: import config_vim
   import_tasks: config_vim.yml
